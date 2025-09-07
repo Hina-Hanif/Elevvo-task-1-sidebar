@@ -47,11 +47,11 @@ This project was created as part of my **Frontend Development Internship Task at
 
 ### ▶️ Expanded Sidebar
 
-![Expanded Sidebar](assessts/expended.jpg)  
+![Expanded Sidebar](assessts/sidebar%20expended.jpg)  
 
 ### ◀️ Collapsed Sidebar
 
-![Collapsed Sidebar](assessts/collapsed.jpg)  
+![Collapsed Sidebar](assessts/sidebar%20collapsed.jpg)  
 
 ---
 
