@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Collapsible Sidebar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Icons (Font Awesome) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Overlay for mobile -->
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar" aria-label="Primary" data-state="expanded">
+    <div class="sidebar__header">
+      <button class="toggle" id="toggleBtn" aria-label="Toggle sidebar" aria-expanded="true">
+        <span class="toggle__bar"></span>
+        <span class="toggle__bar"></span>
+        <span class="toggle__bar"></span>
+      </button>
+      <a class="brand" href="#" aria-label="Homepage">
+        <i class="fa-solid fa-atom brand__icon"></i>
+        <span class="brand__text">MY APP</span>
+      </a>
+    </div>
+
+    <nav class="nav" role="navigation">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#" class="nav__link is-active" data-tooltip="Dashboard">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" class="nav__link" data-tooltip="Projects">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>Projects</span>
+          </a>
+        </li>
+
+        <!-- Submenu -->
+        <li class="nav__item nav__item--has-children">
+          <button class="nav__link nav__link--button" data-accordion aria-expanded="false" aria-controls="settings-submenu" data-tooltip="Settings">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+            <i class="fa-solid fa-chevron-down caret" aria-hidden="true"></i>
+          </button>
+          <ul id="settings-submenu" class="submenu" hidden>
+            <li><a href="#" class="submenu__link" data-tooltip="Account"><i class="fa-regular fa-user"></i><span>Account</span></a></li>
+            <li><a href="#" class="submenu__link" data-tooltip="Privacy"><i class="fa-solid fa-shield"></i><span>Privacy</span></a></li>
+            <li><a href="#" class="submenu__link" data-tooltip="Billing"><i class="fa-regular fa-credit-card"></i><span>Billing</span></a></li>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" class="nav__link" data-tooltip="Analytics">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Analytics</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" class="nav__link" data-tooltip="Messages">
+            <i class="fa-regular fa-envelope"></i>
+            <span>Messages</span>
+          </a>
+        </li>
+      </ul>
+      <!-- Active indicator -->
+      <span class="active-indicator" aria-hidden="true"></span>
+    </nav>
+
+    <!-- Footer / Profile -->
+    <div class="sidebar__footer">
+      <div class="user">
+        <img src="https://i.pravatar.cc/100?img=13" alt="User avatar" class="user__avatar" />
+        <div class="user__meta">
+          <strong class="user__name">Your Profile</strong>
+          <small class="user__role">Product Lead</small>
+        </div>
+      </div>
+      <div class="footer__actions">
+        <button class="icon-btn" title="Notifications" aria-label="Notifications">
+          <i class="fa-regular fa-bell"></i><span class="badge">3</span>
+        </button>
+        <button class="icon-btn" title="Logout" aria-label="Logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content" id="content">
+    <header class="content__header">
+      <h1>Welcome to My Collapsible sidebar</h1>
+      <p>Dark theme · Smooth animations · Mobile-ready · Accessible</p>
+    </header>
+
+    <section class="cards">
+      <article class="card">
+        <h3>Uptime</h3>
+        <p>99.98%</p>
+      </article>
+      <article class="card">
+        <h3>Active Users</h3>
+        <p>12,420</p>
+      </article>
+      <article class="card">
+        <h3>Revenue</h3>
+        <p>$84,210</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
